@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin</title>
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/41781f79df.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+    <script defer src="Js/admin.js"></script>
+  </head>
+  <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
+    <div id="header">
+      <span class="logo">
+        <a href="admin.html">Admin Dashboard</a>
+      </span>
+      <span class="website-menu">
+        <a href="index.html"> Logout</a>
+      </span>
+    </div>
+    <div id="container">
+      <div class="sidebar">
+        <div id="sidebar-menu">
+          <div>
+            <h3 id="clock"></h3>
+          </div>
+          <ul>
+            <li class="fa fa-tachometer">
+              <a href="admin.html"> Dashboard</a>
+            </li>
+            <li class="fa fa-user"><a href="#"> My Profile</a></li>
+            <li class="fa fa-database">
+              <a href="master_data.html"> Master Data</a>
+            </li>
+            <li class="fa fa-sign-out-alt"><a href="index.html"> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="konten">
+        <h1>My Profile</h1>
+        <div id="container">
+          <div id="about">
+            <img src="image/img-about.jpg" alt="" />
+          </div>
+          <div>
+            <table>
+              <tr>
+                <td>Fullname</td>
+                <td>:</td>
+                <td>Eko Cahyanto</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td>ekocahyanto007@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Date Of Birth</td>
+                <td>:</td>
+                <td>September 10th, 1993</td>
+              </tr>
+              <tr>
+                <td>Date Register</td>
+                <td>:</td>
+                <td>July 10th, 2020</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href=""
+                    ><button class="btn btn-update">Update Profile</button></a
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <p>
+        © 2020 |
+        <a href="https://belajarbarengyanto.wordpress.com/"
+          >belajarbarengyanto.wordpress.com</a
+        >
+        | Eko Cahyanto
+      </p>
+    </div>
+  </body>
+</html>

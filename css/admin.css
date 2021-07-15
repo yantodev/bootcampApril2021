@@ -1,0 +1,259 @@
+html,
+body {
+  background-image: url("../image/image.png");
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#header {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin: 0;
+  font-size: x-large;
+  padding: 10px;
+}
+
+#header .logo {
+  font-size: 25px;
+  /* margin: 0 0; */
+  margin: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: italic;
+}
+
+#header .logo a {
+  font-size: 25px;
+  /* margin: 0 0; */
+  margin: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: italic;
+  color: white;
+  text-decoration: none;
+}
+
+#header .website-menu {
+  float: right;
+}
+
+#header .website-menu a {
+  color: white;
+  margin: 10px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  list-style: none;
+  text-decoration: none;
+}
+
+#header .website-menu a:hover {
+  color: chartreuse;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 20% auto;
+  /* width: 100%; */
+  margin: auto;
+  padding: 0 20px;
+  margin-top: 10px;
+  min-height: 90%;
+  position: relative;
+}
+
+#container .sidebar {
+  /* width: 20%; */
+  margin-right: 20px;
+  float: left;
+}
+
+#container .sidebar #sidebar-menu {
+  /* border-radius: 10px; */
+  padding: 20px 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  float: left;
+  background-color: rgb(7, 94, 10);
+  min-height: 94%;
+}
+
+#container .sidebar #sidebar-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#container .sidebar #sidebar-menu li {
+  margin: 0;
+  padding: 10px;
+  margin-right: 5px;
+  list-style: none;
+  float: left;
+}
+
+#container .sidebar #sidebar-menu a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+#container .sidebar #sidebar-menu a:hover {
+  color: chartreuse;
+}
+
+#container .sidebar #sidebar-menu .fa {
+  color: white;
+  margin-right: 5px;
+}
+
+#container #konten {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#container #konten h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+#container #konten img {
+  width: 100%;
+}
+
+#container #konten p {
+  text-align: justify;
+  margin: 10px;
+}
+
+#container #konten li {
+  list-style-type: decimal;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#container #konten ol p {
+  margin: 0;
+}
+
+#container .right {
+  width: 15%;
+  padding: 0;
+  margin-left: 20px;
+  float: left;
+}
+#container #about img {
+  margin: auto;
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 100em;
+  border-style: ridge;
+}
+
+#container .sidebar #sidebar-menu #clock {
+  font-weight: bolder;
+  margin-left: 15px;
+  color: aliceblue;
+}
+
+.btn-update {
+  background-color: rgb(218, 241, 6);
+  color: black;
+  border: 2px solid #4caf50; /* Green */
+}
+
+.btn:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.fa-facebook-square {
+  color: darkblue;
+}
+
+.fa-twitter-square {
+  color: rgb(57, 57, 245);
+}
+
+.fa-instagram {
+  color: red;
+}
+
+.fa-whatsapp {
+  color: green;
+}
+
+#footer {
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  float: bottom;
+  height: 50px;
+  line-height: 50px;
+  /* position: absolute; */
+  bottom: 0px;
+}
+
+#footer p a {
+  text-decoration: none;
+  font-size: 15px;
+  font-family: monospace;
+  color: white;
+  /* padding: 15px; */
+}
+#footer a:hover {
+  color: green;
+}
+
+/* HP */
+/* @media (max-width: 600px) {
+  .website-menu {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    float: right;
+    padding-right: 20px;
+  }
+
+  #container {
+    display: grid;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  #container .sidebar {
+    display: none;
+  }
+
+  #container #konten {
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  #container .right {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  #container .right #about {
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  #container .right #follow {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+} */

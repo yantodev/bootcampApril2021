@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin</title>
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/41781f79df.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+    <script defer src="Js/admin.js"></script>
+  </head>
+  <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
+    <div id="header">
+      <span class="logo">
+        <a href="admin.html">Admin Dashboard</a>
+      </span>
+      <span class="website-menu">
+        <a href="index.html"> Logout</a>
+      </span>
+    </div>
+    <div id="container">
+      <div class="sidebar">
+        <div id="sidebar-menu">
+          <div>
+            <h3 id="clock"></h3>
+          </div>
+          <ul>
+            <li class="fa fa-tachometer"><a href="#"> Dashboard</a></li>
+            <li class="fa fa-user">
+              <a href="profile_admin.html"> My Profile</a>
+            </li>
+            <li class="fa fa-database">
+              <a href="master_data.html"> Master Data</a>
+            </li>
+            <li class="fa fa-sign-out-alt"><a href="index.html"> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="konten">
+        <h1>Selamat datang admin</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          aliquid rem iure illo perspiciatis ratione! Harum, deleniti soluta?
+          Molestiae aliquid ipsum ut harum ipsa quos quo dolores, eaque ad
+          nesciunt cum itaque suscipit atque nulla vero animi, labore nisi
+          dolorem placeat rem doloribus cupiditate expedita voluptatem id?
+          Quaerat, aperiam delectus!
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et eos iusto
+          autem mollitia eveniet aliquam expedita quam quidem facere. In unde
+          eaque consectetur ut dolorum ratione! Harum aspernatur quis provident.
+        </p>
+      </div>
+    </div>
+    <div id="footer">
+      <p>
+        © 2020 |
+        <a href="https://belajarbarengyanto.wordpress.com/"
+          >belajarbarengyanto.wordpress.com</a
+        >
+        | Eko Cahyanto
+      </p>
+    </div>
+  </body>
+</html>
