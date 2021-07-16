@@ -24,6 +24,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
     <script defer src="/Js/admin.js"></script>
   </head>
   <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
@@ -51,6 +53,9 @@
             <li class="fa fa-database">
               <a href="/template/backend/master_data.html"> Master Data</a>
             </li>
+            <li class="fa fa-database">
+              <a href="/template/backend/crud.html"> Crud Data</a>
+            </li>
             <li class="fa fa-sign-out-alt"><a href="/template/frontend/index.html"> Logout</a></li>
           </ul>
         </div>
@@ -60,9 +65,11 @@
         <button class="btn btn-primary mb-3" onclick="addRow();">
           ADD Data
         </button>
-        <div id="table_data">
-          <table class="table">
-            <thead>
+        <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        <div class="table-responsive">
+          <div id="table_data">
+            <table id="myTable" class="table">
+              <thead>
               <!-- <tr> -->
                 <th>No</th>
                 <th>Name</th>
@@ -73,12 +80,23 @@
             </thead>
             <tbody>
               <tbody>
-                
+                <!-- <div id="listingTable"></div> -->
               </tbody>
             </tbody>
           </table>
+          <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+          <a href="javascript:nextPage()" id="btn_next">Next</a>
+          page: <span id="page"></span>
         </div>
       </div>
+    
+    <!-- pagging -->
+    <!-- <div id="listingTable"></div>
+<a href="javascript:prevPage()" id="btn_prev">Prev</a>
+<a href="javascript:nextPage()" id="btn_next">Next</a>
+page: <span id="page"></span> -->
+<!-- ===== -->
+    </div>
     </div>
     <div id="footer">
       <p>
@@ -89,5 +107,26 @@
         | Eko Cahyanto
       </p>
     </div>
+
+    <!-- <script>
+      function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[1];
+              if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = "";
+                  } else {
+                      tr[i].style.display = "none";
+                  }
+              }
+          }
+      }
+  </script> -->
   </body>
 </html>
