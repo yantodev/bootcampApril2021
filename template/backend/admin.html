@@ -19,16 +19,16 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
     <script defer src="Js/admin.js"></script>
   </head>
   <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
     <div id="header">
       <span class="logo">
-        <a href="admin.html">Admin Dashboard</a>
+        <a href="/template/backend/admin.html">Admin Dashboard</a>
       </span>
       <span class="website-menu">
-        <a href="index.html"> Logout</a>
+        <a href="/template/frontend/index.html"> Logout</a>
       </span>
     </div>
     <div id="container">
@@ -40,12 +40,14 @@
           <ul>
             <li class="fa fa-tachometer"><a href="#"> Dashboard</a></li>
             <li class="fa fa-user">
-              <a href="profile_admin.html"> My Profile</a>
+              <a href="/template/backend/profile_admin.html"> My Profile</a>
             </li>
             <li class="fa fa-database">
-              <a href="master_data.html"> Master Data</a>
+              <a href="/template/backend/master_data.html"> Master Data</a>
             </li>
-            <li class="fa fa-sign-out-alt"><a href="index.html"> Logout</a></li>
+            <li class="fa fa-sign-out-alt">
+              <a href="/template/frontend/index.html"> Logout</a>
+            </li>
           </ul>
         </div>
       </div>
