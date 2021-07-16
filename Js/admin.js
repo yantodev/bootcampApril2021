@@ -34,7 +34,7 @@ let data = {
     "Ashton Cox",
     "Bradley Greer",
     "Brenden Wagner",
-    "Brenden Wagner",
+    "Bren",
   ],
   address: [
     "Jogja",
@@ -245,6 +245,7 @@ function nextPage() {
 function changePage(page) {
   var btn_next = document.getElementById("btn_next");
   var btn_prev = document.getElementById("btn_prev");
+  var src = document.getElementById("search");
   // var listing_table = document.getElementsByTagName("listingTable");
   var listing_table = document.querySelector("#table_data > table > tbody");
   var page_span = document.getElementById("page");

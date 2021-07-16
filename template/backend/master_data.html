@@ -65,10 +65,11 @@
         <button class="btn btn-primary mb-3" onclick="addRow();">
           ADD Data
         </button>
-        <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        <!-- <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> -->
         <div class="table-responsive">
           <div id="table_data">
             <table id="myTable" class="table">
+              <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
               <thead>
               <!-- <tr> -->
                 <th>No</th>
@@ -84,9 +85,9 @@
               </tbody>
             </tbody>
           </table>
-          <a href="javascript:prevPage()" id="btn_prev">Prev</a>
-          <a href="javascript:nextPage()" id="btn_next">Next</a>
+          <a href="javascript:prevPage()" id="btn_prev"><div class="badge badge-warning">Prev</div></a>
           page: <span id="page"></span>
+          <a href="javascript:nextPage()" id="btn_next"><div class="badge badge-success">Next</div></a>
         </div>
       </div>
     
