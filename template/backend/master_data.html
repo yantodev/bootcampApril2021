@@ -71,17 +71,14 @@
             <table id="myTable" class="table">
               <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
               <thead>
-              <!-- <tr> -->
                 <th>No</th>
                 <th>Name</th>
                 <th>Address</th>
                 <th>Status</th>
                 <th>Action</th>
-              <!-- </tr> -->
             </thead>
             <tbody>
               <tbody>
-                <!-- <div id="listingTable"></div> -->
               </tbody>
             </tbody>
           </table>
@@ -90,13 +87,6 @@
           <a href="javascript:nextPage()" id="btn_next"><div class="badge badge-success">Next</div></a>
         </div>
       </div>
-    
-    <!-- pagging -->
-    <!-- <div id="listingTable"></div>
-<a href="javascript:prevPage()" id="btn_prev">Prev</a>
-<a href="javascript:nextPage()" id="btn_next">Next</a>
-page: <span id="page"></span> -->
-<!-- ===== -->
     </div>
     </div>
     <div id="footer">
@@ -108,26 +98,5 @@ page: <span id="page"></span> -->
         | Eko Cahyanto
       </p>
     </div>
-
-    <!-- <script>
-      function myFunction() {
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("myTable");
-          tr = table.getElementsByTagName("tr");
-          for (i = 0; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[1];
-              if (td) {
-                  txtValue = td.textContent || td.innerText;
-                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                      tr[i].style.display = "";
-                  } else {
-                      tr[i].style.display = "none";
-                  }
-              }
-          }
-      }
-  </script> -->
   </body>
 </html>

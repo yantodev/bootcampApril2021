@@ -63,20 +63,20 @@ let data = {
     "Active",
   ],
 };
-var j = 1;
-for (let i = 0; i < data.nama.length; i++) {
-  var td = document.querySelector("#table_data > table > tbody");
-  td.innerHTML += `
-    <td>${j++}</td>
-    <td>${data.nama[i]}</td>
-    <td>${data.address[i]}</td>
-    <td>${data.status[i]}</td>
-    <td>
-    <a href=""><span class="badge badge-primary">Edit</span></a>
-    <a href=""><span class="badge badge-danger">Delete</span></a>
-    </td>
-  `;
-}
+// var j = 1;
+// for (let i = 0; i < data.nama.length; i++) {
+//   var td = document.querySelector("#table_data > table > tbody");
+//   td.innerHTML += `
+//     <td>${j++}</td>
+//     <td>${data.nama[i]}</td>
+//     <td>${data.address[i]}</td>
+//     <td>${data.status[i]}</td>
+//     <td>
+//     <a href=""><span class="badge badge-primary">Edit</span></a>
+//     <a href=""><span class="badge badge-danger">Delete</span></a>
+//     </td>
+//   `;
+// }
 
 function addRow() {
   var table = document.getElementsByTagName("table")[0];
@@ -254,8 +254,10 @@ function changePage(page) {
   if (page < 1) page = 1;
   if (page > numPages()) page = numPages();
 
+  //clear data
   listing_table.innerHTML = "";
 
+  //looping data
   var j = 1;
   for (
     var i = (page - 1) * records_per_page;
