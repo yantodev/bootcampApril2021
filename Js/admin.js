@@ -1,3 +1,8 @@
+/**
+ * @author eko cahyanto
+ * siswa bootcamp G2 Academy
+ */
+
 function tampilkanwaktu() {
   //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
   var waktu = new Date(); //membuat object date berdasarkan waktu saat
@@ -12,25 +17,66 @@ function tampilkanwaktu() {
     (ss.length == 1 ? "0" + ss : ss);
 }
 
-var data = {
-  nama: ["Eko", "Yanto", "Yadi"],
-  address: ["Jogja", "Klaten", "Surabaya"],
-  status: ["Active", "Suspend", "Active"],
+/* ==================================================================================================*/
+/**
+ * tugas day 34
+ * insert data
+ */
+let data = {
+  nama: [
+    "Eko",
+    "Yanto",
+    "Yadi",
+    "jho",
+    "Jhon",
+    "Airi Satou",
+    "Angelica Ramos",
+    "Ashton Cox",
+    "Bradley Greer",
+    "Brenden Wagner",
+    "Bren",
+  ],
+  address: [
+    "Jogja",
+    "Klaten",
+    "Surabaya",
+    "Jakarta",
+    "Malang",
+    "Jogja",
+    "Klaten",
+    "Surabaya",
+    "Jakarta",
+    "Malang",
+    "Malang",
+  ],
+  status: [
+    "Active",
+    "Suspend",
+    "Active",
+    "Active",
+    "Active",
+    "Active",
+    "Suspend",
+    "Active",
+    "Active",
+    "Active",
+    "Active",
+  ],
 };
-var j = 1;
-for (let i = 0; i < data.nama.length; i++) {
-  var td = document.querySelector("#table_data > table > tbody");
-  td.innerHTML += `
-    <td>${j++}</td>
-    <td>${data.nama[i]}</td>
-    <td>${data.address[i]}</td>
-    <td>${data.status[i]}</td>
-    <td>
-    <a href=""><span class="badge badge-primary">Edit</span></a>
-    <a href=""><span class="badge badge-danger">Delete</span></a>
-    </td>
-  `;
-}
+// var j = 1;
+// for (let i = 0; i < data.nama.length; i++) {
+//   var td = document.querySelector("#table_data > table > tbody");
+//   td.innerHTML += `
+//     <td>${j++}</td>
+//     <td>${data.nama[i]}</td>
+//     <td>${data.address[i]}</td>
+//     <td>${data.status[i]}</td>
+//     <td>
+//     <a href=""><span class="badge badge-primary">Edit</span></a>
+//     <a href=""><span class="badge badge-danger">Delete</span></a>
+//     </td>
+//   `;
+// }
 
 function addRow() {
   var table = document.getElementsByTagName("table")[0];
@@ -94,3 +140,165 @@ function saveRow() {
 function reset() {
   $("#row1").remove();
 }
+
+/* ==================================================================================================*/
+/**
+ * latihan crud
+ */
+var selectedRow = null;
+function validateMyForm() {
+  event.preventDefault();
+
+  var formData = {};
+  formData["name"] = document.getElementById("name").value;
+  formData["age"] = document.getElementById("age").value;
+  if (selectedRow == null) insertData(formData);
+  else onupdate(formData);
+  reset();
+}
+
+function insertData(formData) {
+  var tableData = document
+    .getElementById("mytable")
+    .getElementsByTagName("tbody")[0];
+  let newRow = tableData.insertRow(tableData.length);
+  var cell1 = newRow.insertCell(0);
+  cell1.innerHTML = formData.name;
+  var cell2 = newRow.insertCell(1);
+  cell2.innerHTML = formData.age;
+  var cell3 = newRow.insertCell(2);
+  cell3.innerHTML = `<a href="#" class="btn btn-sm btn-info" onClick="onedit(this)">Edit</a>`;
+  var cell4 = newRow.insertCell(3);
+  cell4.innerHTML = `<a href="#" class="btn btn-sm btn-danger" onClick="ondelete(this)">Delete</a>`;
+}
+function reset() {
+  document.getElementById("name").value = "";
+  document.getElementById("age").value = "";
+  selectedRow = null;
+}
+function onedit(td) {
+  selectedRow = td.parentElement.parentElement;
+  document.getElementById("name").value = selectedRow.cells[0].innerHTML;
+  document.getElementById("age").value = selectedRow.cells[1].innerHTML;
+}
+function onupdate(formData) {
+  selectedRow.cells[0].innerHTML = formData.name;
+  selectedRow.cells[1].innerHTML = formData.age;
+}
+function ondelete(td) {
+  var row = td.parentElement.parentElement;
+  document.getElementById("mytable").deleteRow(row.rowIndex);
+  reset();
+}
+
+/* ==================================================================================================*/
+/**
+ * tugas day 35
+ * search data by row name
+ * pagging table
+ */
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1]; //get by name
+    // td = tr[i].getElementsByTagName("td")[2]; //get by address
+    // td = tr[i].getElementsByTagName("td")[3]; //get by
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+//jQuery
+// $(document).ready(function () {
+//   $("#myTable").DataTable();
+// });
+
+//pagging
+var current_page = 1;
+var records_per_page = 4;
+
+function prevPage() {
+  if (current_page > 1) {
+    current_page--;
+    changePage(current_page);
+  }
+}
+
+function nextPage() {
+  if (current_page < numPages()) {
+    current_page++;
+    changePage(current_page);
+  }
+}
+
+//function change page
+function changePage(page) {
+  var btn_next = document.getElementById("btn_next");
+  var btn_prev = document.getElementById("btn_prev");
+  var src = document.getElementById("search");
+  // var listing_table = document.getElementsByTagName("listingTable");
+  var listing_table = document.querySelector("#table_data > table > tbody");
+  var page_span = document.getElementById("page");
+
+  // Validate page
+  if (page < 1) page = 1;
+  if (page > numPages()) page = numPages();
+
+  //clear data
+  listing_table.innerHTML = "";
+
+  //looping data
+  var j = 1;
+  for (
+    var i = (page - 1) * records_per_page;
+    i < page * records_per_page;
+    i++
+  ) {
+    // listing_table.innerHTML += "<td>" + data.nama[i] + "</td>";
+    // listing_table.innerHTML += "<td>" + data.address[i] + "</td>";
+    // listing_table.innerHTML += "<td>" + data.status[i] + "</td>";
+    // var td = document.querySelector("#table_data > table > tbody");
+
+    listing_table.innerHTML += `
+    <td>${j++}</td>
+    <td>${data.nama[i]}</td>
+    <td>${data.address[i]}</td>
+    <td>${data.status[i]}</td>
+    <td>
+    <a href=""><span class="badge badge-primary">Edit</span></a>
+    <a href=""><span class="badge badge-danger">Delete</span></a>
+    </td>
+  `;
+  }
+  page_span.innerHTML = page;
+
+  if (page == 1) {
+    btn_prev.style.visibility = "hidden";
+  } else {
+    btn_prev.style.visibility = "visible";
+  }
+
+  if (page == numPages()) {
+    btn_next.style.visibility = "hidden";
+  } else {
+    btn_next.style.visibility = "visible";
+  }
+}
+
+function numPages() {
+  return Math.ceil(data.nama.length / records_per_page);
+}
+
+window.onload = function () {
+  changePage(1);
+};
