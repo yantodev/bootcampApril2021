@@ -310,7 +310,9 @@ const addRow = () => {
 
   const newRow = `
           <tr>
-          <td align="center"></td>
+          <td align="center">
+            <input type="text" id="newid" />
+          </td>
           <td>
               <input type="text" id="newname" />
           </td>
@@ -380,6 +382,7 @@ let validateMyForm = () => {
 };
 
 function saveRow() {
+  let newid = $("#newid").val();
   var newname = $("#newname").val();
   var newemail = $("#newemail").val();
   var newaddress = $("#newaddress").val();
@@ -393,7 +396,7 @@ function saveRow() {
     swal("Wrong Input!", "Please Fill the Inputs", "warning");
   } else {
     master.push({
-      id: 1,
+      id: newid,
       name: newname,
       email: newemail,
       address: newaddress,
@@ -425,6 +428,7 @@ function saveRow() {
 
     $("#row1").remove();
     swal("Added", "Success!", "success");
+    renderTable();
   }
 }
 
