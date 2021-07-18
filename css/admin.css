@@ -257,3 +257,26 @@ body {
     padding: 0;
   }
 } */
+div.pagination {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+div.pagination span {
+  padding: 5px 10px;
+  /* border: 1px solid grey; */
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.pagination span:last-child {
+  margin-right: 0;
+}
+
+div.pagination span.active {
+  color: blue;
+}

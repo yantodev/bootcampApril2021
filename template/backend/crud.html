@@ -24,7 +24,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
-    <script defer src="/Js/admin.js"></script>
+    <script type="text/javascript" src="/data.json"></script>
+    <script defer src="/Js/crud.js"></script>
   </head>
   <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
     <div id="header">
@@ -43,6 +44,7 @@
           <div>
             <h3 id="clock"></h3>
           </div>
+          <hr />
           <ul>
             <li class="fa fa-tachometer">
               <a href="/template/backend/admin.html"> Dashboard</a>
@@ -66,42 +68,49 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <form onsubmit="return validateMyForm()" autocomplete="off">
+              <!-- <form onsubmit="return validateMyForm()" autocomplete="off">
                 <div class="form-group">
-                  <label>name</label>
+                  <label>Title</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
+                    id="title"
+                    name="title"
                     class="form-control"
                   />
                 </div>
                 <div class="form-group">
-                  <label>age</label>
-                  <input type="text" id="age" name="age" class="form-control" />
+                  <label>Body</label>
+                  <textarea
+                    type="text"
+                    id="body"
+                    name="body"
+                    class="form-control"
+                  />
+                 </textarea>
                 </div>
                 <button class="btn btn-primary btn-sm">submit</button>
-              </form>
+              </form> -->
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h2 class="text-primary text-center">Data Mahasiswa</h2>
-              <table class="table" id="mytable">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </div>
+        <h2 class="text-primary text-center">List Posting</h2>
+        <button class="btn btn-primary mb-3" onclick="addRow();">
+          ADD Data
+        </button>
+        <div id="table_crud">
+          <table class="table" id="mytable">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div class="pagination"></div>
         </div>
       </div>
     </div>
