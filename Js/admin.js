@@ -3,7 +3,7 @@
  * siswa bootcamp G2 Academy
  */
 
-function tampilkanwaktu() {
+ let tampilkanwaktu = () => {
   //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
   var waktu = new Date(); //membuat object date berdasarkan waktu saat
   var sh = waktu.getHours() + ""; //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
@@ -16,6 +16,44 @@ function tampilkanwaktu() {
     ":" +
     (ss.length == 1 ? "0" + ss : ss);
 }
+
+/**
+ * sidebar menu
+ */
+let header = document.getElementById("header");
+let sidebar = document.getElementById("sidebar-menu");
+header.innerHTML = `
+<span class="logo">
+        <a href="/template/backend/admin.html">Admin Dashboard</a>
+      </span>
+      <span class="website-menu">
+        <a href="/template/frontend/index.html"> Logout</a>
+      </span>
+`
+sidebar.innerHTML= `
+    <div>
+            <h3 id="clock"></h3>
+          </div>
+          <ul>
+            <li class="fa fa-tachometer"><a href="/template/backend/admin.html"> Dashboard</a></li>
+            <li class="fa fa-user">
+              <a href="/template/backend/profile_admin.html"> My Profile</a>
+            </li>
+            <li class="fa fa-database">
+              <a href="/template/backend/master_data.html"> Master Data</a>
+            </li>
+            <li class="fa fa-database">
+              <a href="/template/backend/crud.html"> Crud Data</a>
+            </li>
+            <li class="fa fa-database">
+              <a href="/template/backend/json.html"> JsonPlaceholder Data</a>
+            </li>
+            <li class="fa fa-sign-out-alt">
+              <a href="/template/frontend/index.html"> Logout</a>
+            </li>
+          </ul>
+        </div>
+`;
 
 /* ==================================================================================================*/
 /**
@@ -429,8 +467,8 @@ const filterRow = (e) => {
 //   changePage(1);
 // };
 
-const __init = () => {
-  generateTable();
-  mapEvent();
-};
-__init();
+// const __init = () => {
+//   generateTable();
+//   mapEvent();
+// };
+// __init();

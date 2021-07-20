@@ -1,0 +1,14 @@
+/**
+ * Latihan:
+ *          - Tambahkan Kolom Action yang berisi Edit dan Delete (maks. 16.30)
+ *          - Gantilah pagination existing menggunakan pagination seperti google
+ *              * total data yang di tampilkan 4 data tiap page
+ *              * total pagination button yang di tampilkan 5 button
+ *              * buat dummy data sebanyak 30
+ *
+ *
+ * Latihan:
+ *          - Buatlah 1 halaman untuk menampilkan daftar foto dari setiap user ( no, nama foto, nama album, user, thumbnail )
+ *          - Ketika thumbnail diklik, maka muncul pop up gambar dengan ukuran sebenarnya
+ *          - Terapkanlah pagination
+ */

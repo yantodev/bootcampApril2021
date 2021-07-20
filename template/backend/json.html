@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin</title>
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/41781f79df.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <script defer src="/Js/json.js"></script>
+    <script defer src="/Js/admin.js"></script>
+  </head>
+  <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
+    <div id="header">
+    </div>
+    <div id="container">
+      <div class="sidebar">
+        <div id="sidebar-menu">
+        </div>
+      </div>
+      <div id="konten">
+        <h1>Daftar Users</h1>
+        <div class="table-responsive">
+            <div id="table_data">
+              <table id="myTable" class="table">
+                <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                <thead>
+                  <th>No</th>
+                  <th>Name Foto</th>
+                  <th>Name Album</th>
+                  <th>User</th>
+                  <th>Tumbnail</th>
+              </thead>
+                <tbody>
+                </tbody>
+              </tbody>
+            </table>
+            <div class="pagination"></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="footer">
+      <p>
+        © 2020 |
+        <a href="https://belajarbarengyanto.wordpress.com/"
+          >belajarbarengyanto.wordpress.com</a
+        >
+        | Eko Cahyanto
+      </p>
+    </div>
+
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="spanClick()">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+  </body>
+</html>
