@@ -24,9 +24,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
+    <script type="text/javascript" src="/data.json"></script>
     <script defer src="/Js/admin.js"></script>
+    <script defer src="/Js/crud.js"></script>
   </head>
   <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
     <div id="header">
@@ -37,33 +37,54 @@
         </div>
       </div>
       <div id="konten">
-        <h1>Data Mahasiswa</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- <form onsubmit="return validateMyForm()" autocomplete="off">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Body</label>
+                  <textarea
+                    type="text"
+                    id="body"
+                    name="body"
+                    class="form-control"
+                  />
+                 </textarea>
+                </div>
+                <button class="btn btn-primary btn-sm">submit</button>
+              </form> -->
+            </div>
+          </div>
+        </div>
+        <h2 class="text-primary text-center">Data Mahasiswa</h2>
         <button class="btn btn-primary mb-3" onclick="addRow();">
           ADD Data
         </button>
-        <!-- <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> -->
-        <div class="table-responsive">
-          <div id="table_data">
-            <table id="myTable" class="table">
-              <input class="form-control col-lg-6 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-              <thead>
+        <div id="table_crud">
+          <table class="table" id="mytable">
+            <thead>
+              <tr>
                 <th>No</th>
                 <th>Name</th>
+                <th>Email</th>
                 <th>Address</th>
-                <th>Status</th>
                 <th>Action</th>
+              </tr>
             </thead>
-            <tbody>
-              <tbody>
-              </tbody>
-            </tbody>
+            <tbody></tbody>
           </table>
-          <a href="javascript:prevPage()" id="btn_prev"><div class="badge badge-warning">Prev</div></a>
-          page: <span id="page"></span>
-          <a href="javascript:nextPage()" id="btn_next"><div class="badge badge-success">Next</div></a>
+          <div class="pagination"></div>
         </div>
       </div>
-    </div>
     </div>
     <div id="footer">
       <p>
